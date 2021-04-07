@@ -2,35 +2,23 @@
     "definition": {
         "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
         "actions": {
-            "List_blobs_in_root_folder": {
+            "Send_an_email_(V2)": {
                 "type": "ApiConnection",
                 "inputs": {
                     "host": {
                         "connection": {
-                            "referenceName": "azureblob_1"
+                            "referenceName": "la-uks-logicappsample-connection-office365"
                         }
                     },
-                    "method": "get",
-                    "path": "/datasets/default/foldersV2",
-                    "queries": {
-                        "useFlatListing": false,
-                        "nextPageMarker": ""
-                    }
+                    "method": "post",
+                    "body": {
+                        "To": "@appsetting('emailAddress')",
+                        "Subject": "Hello from visual studio code",
+                        "Body": "<p>This is a test email</p>"
+                    },
+                    "path": "/v2/Mail"
                 },
                 "runAfter": {}
-            },
-            "Response": {
-                "type": "Response",
-                "kind": "http",
-                "inputs": {
-                    "statusCode": 200,
-                    "body": "@body('List_blobs_in_root_folder')?['value']"
-                },
-                "runAfter": {
-                    "List_blobs_in_root_folder": [
-                        "Succeeded"
-                    ]
-                }
             }
         },
         "triggers": {

@@ -1,17 +1,17 @@
 {
   "managedApiConnections": {
-    "azureblob_1": {
+    "la-uks-logicappsample-connection-office365": {
       "api": {
-        "id": "/subscriptions/9b0ae2db-468c-4b11-baf2-387ae400de2d/providers/Microsoft.Web/locations/uksouth/managedApis/azureblob"
+        "id": "/subscriptions/9b0ae2db-468c-4b11-baf2-387ae400de2d/providers/Microsoft.Web/locations/uksouth/managedApis/office365"
       },
       "connection": {
-        "id": "/subscriptions/9b0ae2db-468c-4b11-baf2-387ae400de2d/resourceGroups/AX7/providers/Microsoft.Web/connections/azureblob-7"
+        "id": "/subscriptions/9b0ae2db-468c-4b11-baf2-387ae400de2d/resourceGroups/AX7/providers/Microsoft.Web/connections/office365-2"
       },
-      "connectionRuntimeUrl": "https://d345bb9d725e228d.08.common.logic-uksouth.azure-apihub.net/apim/azureblob/6c51de4658644f78aab7a0a94a02f2de/",
+      "connectionRuntimeUrl": "https://d345bb9d725e228d.08.common.logic-uksouth.azure-apihub.net/apim/office365/6160694779ce46948272ed081aa72557/",
       "authentication": {
         "type": "Raw",
         "scheme": "Key",
-        "parameter": "@appsetting('azureblob_1-connectionKey')"
+        "parameter": "@appsetting('office365_1-connectionKey')"
       }
     }
   }
